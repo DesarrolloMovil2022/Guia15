@@ -9,13 +9,14 @@ import android.net.NetworkInfo
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
-    private val button3 : Button
-        get() =  findViewById(R.id.button3)
+    private val btnSC : Button
+        get() =  findViewById(R.id.btnSC)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button3.setOnClickListener {
+        btnSC.setOnClickListener {
             if(isConexion(applicationContext)) {
                 Toast.makeText(this, "Tiene acceso a internet", Toast.LENGTH_LONG).show()
             } else {
@@ -29,5 +30,7 @@ class MainActivity : AppCompatActivity() {
         val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
         return activeNetwork?.isConnectedOrConnecting == true
     }
+
+
 
 }
